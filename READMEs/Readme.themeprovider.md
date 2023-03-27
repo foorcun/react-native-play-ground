@@ -51,8 +51,10 @@ console.log("bu Home dan " + theme.primary);
 
 ## import
 
+```.sh
 // import styled from "styled-components"; // bunu import etme
 import styled from "styled-components/native"; // bunu import et
+```
 
 ## default style larin girilmesi
 
