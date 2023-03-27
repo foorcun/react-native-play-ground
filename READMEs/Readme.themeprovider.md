@@ -8,6 +8,12 @@ const theme = {
 primary: "black",
 };
 
+### ya da import etmek
+
+```.sh
+import { theme } from './src/infrastructure/theme';
+```
+
 ## return de kullanilmasi
 
 ```.sh
