@@ -58,7 +58,11 @@ import styled from "styled-components/native"; // bunu import et
 
 ## default style larin girilmesi
 
-const defaultViewStyles = (theme) => `background-color: ${theme.primary};`;
+```.sh
+const defaultViewStyles = (theme) => `
+background-color: ${theme.primary};
+`;
+```
 
 ## kendi componentimizi olusturmamiz
 
