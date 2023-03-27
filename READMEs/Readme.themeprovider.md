@@ -47,9 +47,7 @@ console.log("bu Home dan " + theme.primary);
 
       style={(styles.container, { flex: 1, backgroundColor: theme.primary })}
 
-# !!!!!
-
-styled kullanimi
+# !!!!! styled kullanimi
 
 ## import
 
