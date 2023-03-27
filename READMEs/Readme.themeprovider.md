@@ -4,15 +4,34 @@ import { ThemeProvider } from "styled-components/native";
 
 ## basit bir sekilde theme tanimlanmasi
 
+```.sh
+
 const theme = {
 primary: "black",
 };
+```
+
+ya da
+
+```.sh
+const theme = {
+  colors: {
+    ui: {
+      primary: "dodgerblue",
+    },
+  },
+};
+```
 
 ### ya da import etmek
 
-```.sh
+````.sh
 import { theme } from './src/infrastructure/theme';
-```
+
+ya da
+```.sh
+import { theme } from "./MyModules/FlutterStart/src/infrastructure/theme";
+````
 
 ## return de kullanilmasi
 

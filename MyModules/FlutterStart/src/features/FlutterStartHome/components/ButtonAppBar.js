@@ -2,7 +2,6 @@ import React from "react";
 import { AppBar, HStack, IconButton } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
-import styled from "styled-components/native"; // bunu import et
 import { useTheme } from "styled-components/native";
 
 const ButtonAppBar = () => {
@@ -11,7 +10,7 @@ const ButtonAppBar = () => {
   return (
     <AppBar
       title="Title"
-      color={theme.primary}
+      color={theme.colors.ui.primary}
       leading={(props) => (
         <IconButton
           icon={(props) => <Icon name="menu" {...props} />}

@@ -9,43 +9,21 @@ import { ThemeProvider } from "styled-components/native";
 
 import { createTheme } from "styled-components";
 
-// const theme = createTheme({
-//   colors: {
-//     primary: "#007AFF",
-//     secondary: "#6C757D",
-//     background: "#FFFFFF",
-//     text: "#333333",
-//   },
-//   fonts: {
-//     regular: "Arial",
-//     bold: "Arial-Bold",
-//   },
-// });
-
 const theme = {
-  primary: "dodgerblue",
+  colors: {
+    ui: {
+      primary: "dodgerblue",
+    },
+  },
 };
 
-// export default function App() {
-//   return (<>
-//   <View></View>
-//   </>);
-//   }
-// }
-
-//export default function App() {
-//return (
-//<>
-//<EkranAlanlari></EkranAlanlari>
-//</>
-//);
-//}
-
 export default function App() {
-  console.log(theme.primary);
+  console.log(theme.colors.ui.primary);
   return (
     <>
       <ThemeProvider theme={theme}>
+        {/* <EkranAlanlari></EkranAlanlari> */}
+
         <FlutterStart></FlutterStart>
         {/* <IlkHome></IlkHome> */}
         {/* <ThemeProviderModule></ThemeProviderModule> */}
