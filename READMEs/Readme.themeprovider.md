@@ -66,7 +66,11 @@ background-color: ${theme.primary};
 
 ## kendi componentimizi olusturmamiz
 
-export const CustomView = styled(View)`  ${({ theme }) => defaultViewStyles(theme)};`;
+```.sh
+export const CustomView = styled(View)`
+  ${({ theme }) => defaultViewStyles(theme)};
+`;
+```
 
 ## kullanimi
 
