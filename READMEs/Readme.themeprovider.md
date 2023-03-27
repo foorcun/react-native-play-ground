@@ -10,16 +10,16 @@ primary: "black",
 
 ## return de kullanilmasi
 
-export default function App() {
-console.log(theme.primary);
-return (
-<>
-<ThemeProvider theme={theme}>
-<ThemeProviderModule></ThemeProviderModule> // bu sadece benim yaptigimi bir component, karismasin die adina Module ekleidim
-</ThemeProvider>
-</>
-);
-}
+export default function App() { <br>
+console.log(theme.primary);<br>
+return (<br>
+<><br>
+<ThemeProvider theme={theme}><br>
+<ThemeProviderModule></ThemeProviderModule> // bu sadece benim yaptigimi bir component, karismasin die adina Module ekleidim<br>
+</ThemeProvider><br>
+</><br>
+);<br>
+}<br>
 
 # yerinde kullanimi
 
