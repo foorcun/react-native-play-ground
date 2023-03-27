@@ -4,8 +4,6 @@ import ButtonAppBar from "../components/ButtonAppBar";
 // import { Dimensions } from "react-native";
 
 export default function FlutterStart() {
-  const { windowDimensions } = Dimensions.get("window");
-
   return (
     <View style={{ flex: 1, backgroundColor: "pink" }}>
       <ButtonAppBar></ButtonAppBar>

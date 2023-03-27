@@ -33,19 +33,38 @@ return (
 
 ## import etmek
 
+```.sh
 import { useTheme } from "styled-components/native";
+```
 
 ## datalarin alinmasi
 
+```.sh
+
 const theme = useTheme();
+```
 
 ## ornek kullanim
 
+```.sh
+
 console.log("bu Home dan " + theme.primary);
+```
 
 ## ornek kullanim View component
 
+```.sh
+
       style={(styles.container, { flex: 1, backgroundColor: theme.primary })}
+```
+
+## ornek kullanim AppBar component
+
+```.sh
+ <AppBar
+      title="Title"
+      color={theme.primary}
+```
 
 # !!!!! styled kullanimi
 

@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 //import FlutterStart from "./MyModules/FlutterStart/src/features/EkranAlani/screens/EkranAlanlari";
-// import FlutterStart from "./MyModules/FlutterStart/src/features/FlutterStartHome/screens/FlutterStart";
+import FlutterStart from "./MyModules/FlutterStart/src/features/FlutterStartHome/screens/FlutterStart";
 // import IlkHome from "./MyModules/IlkKodlar/src/features/IlkHome/screens/IlkHome";
 import ThemeProviderModule from "./MyModules/ThemeProviderModule/src/features/home/screens/Home";
 import { ThemeProvider } from "styled-components/native";
@@ -46,9 +46,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        {/* <FlutterStart></FlutterStart> */}
+        <FlutterStart></FlutterStart>
         {/* <IlkHome></IlkHome> */}
-        <ThemeProviderModule></ThemeProviderModule>
+        {/* <ThemeProviderModule></ThemeProviderModule> */}
       </ThemeProvider>
     </>
   );
