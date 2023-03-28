@@ -10,6 +10,10 @@ import { ThemeProvider } from "styled-components/native";
 import { createTheme } from "styled-components";
 
 import { Navigation } from "./MyModules/NavigationBase/src/infrastructure/navigation";
+// import { AgileBoardNavigation } from "./MyModules/AgileBoard/src/infrastructure/navigation";
+import { AgileBoardNavigation } from "./MyModules/AgileBoard/src/infrastructure/navigation";
+
+import { ScrollViewHorizontalHome2 } from "./MyModules/ScrollViewHorizontal/src/features/screens/ScrollViewHorizontalHome2";
 
 const theme = {
   colors: {
@@ -20,7 +24,7 @@ const theme = {
 };
 
 export default function App() {
-  console.log(theme.colors.ui.primary);
+  // console.log(theme.colors.ui.primary);
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -29,7 +33,10 @@ export default function App() {
         {/* <FlutterStart></FlutterStart> */}
         {/* <IlkHome></IlkHome> */}
         {/* <ThemeProviderModule></ThemeProviderModule> */}
-        <Navigation />
+        {/* <Navigation /> */}
+        {/* <AgileBoardNavigation /> */}
+
+        <ScrollViewHorizontalHome2 />
       </ThemeProvider>
     </>
   );

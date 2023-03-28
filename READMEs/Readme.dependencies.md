@@ -35,3 +35,15 @@ npm install react-navigation-stack
 ```.sh
 npm install @react-navigation/stack
 ```
+
+# Top Tab Navigation
+
+```.sh
+npm install @react-navigation/material-top-tabs react-native-tab-view
+```
+
+## for expo
+
+```.sh
+npx expo install react-native-pager-view
+```
