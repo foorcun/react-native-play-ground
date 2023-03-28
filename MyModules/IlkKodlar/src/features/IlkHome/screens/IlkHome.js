@@ -13,7 +13,8 @@ export default function IlkHome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
+    backgroundColor: "pink",
     alignItems: "center",
     justifyContent: "center",
   },
