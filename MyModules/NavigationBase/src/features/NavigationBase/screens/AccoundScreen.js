@@ -10,6 +10,11 @@ export const AccountScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Login")}
         color="#841584"
       />
+      <Button
+        title="Register"
+        onPress={() => navigation.navigate("Register")}
+        color="#841584"
+      />
       <StatusBar style="auto" />
     </View>
   );
