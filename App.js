@@ -9,6 +9,8 @@ import { ThemeProvider } from "styled-components/native";
 
 import { createTheme } from "styled-components";
 
+import { Navigation } from "./MyModules/NavigationBase/src/infrastructure/navigation";
+
 const theme = {
   colors: {
     ui: {
@@ -24,9 +26,10 @@ export default function App() {
       <ThemeProvider theme={theme}>
         {/* <EkranAlanlari></EkranAlanlari> */}
 
-        <FlutterStart></FlutterStart>
+        {/* <FlutterStart></FlutterStart> */}
         {/* <IlkHome></IlkHome> */}
         {/* <ThemeProviderModule></ThemeProviderModule> */}
+        <Navigation />
       </ThemeProvider>
     </>
   );
