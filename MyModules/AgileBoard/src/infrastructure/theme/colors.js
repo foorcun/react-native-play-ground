@@ -16,6 +16,7 @@ export const colors = {
   bg: {
     primary: "#FFFFFF",
     secondary: "#F4F5F7",
+    icon: "#65B940",
   },
   text: {
     primary: "#0656C9",

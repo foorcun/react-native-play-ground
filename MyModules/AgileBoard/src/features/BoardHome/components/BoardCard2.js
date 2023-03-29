@@ -1,22 +1,36 @@
 import React, { Component } from "react";
 import { View, StyleSheet, ScrollView, Dimensions, Text } from "react-native";
 //import { Constants } from 'expo';
-
-const { width } = Dimensions.get("window");
+import { FontAwesome } from "@expo/vector-icons";
 import { colors } from "../../../infrastructure/theme/colors";
 
-// export default class App extends Component {
+const { width } = Dimensions.get("window");
 
-//   componentDidMount() {
-// 		setTimeout(() => {this.scrollView.scrollTo({x: -30}) }, 1) // scroll view position fix
-// 	}
 export const BoardCard2 = (props) => {
   return (
     // <View style={{ backgroundColor: "green" }}>
     <View>
       <View style={styles.view}>
         {/* <Text>Card Title</Text> */}
-        <Text>{props.title}</Text>
+        <View>
+          <Text>{props.card.title}</Text>
+        </View>
+
+        <View style={{ flexDirection: "row", gap: 5 }}>
+          <View
+            style={{
+              backgroundColor: colors.bg.icon,
+              width: 24,
+              padding: 5,
+              alignItems: "center",
+            }}
+          >
+            <FontAwesome name="bookmark" size={16} color="white" />
+          </View>
+          <View>
+            <Text>{props.card.id}</Text>
+          </View>
+        </View>
       </View>
     </View>
   );

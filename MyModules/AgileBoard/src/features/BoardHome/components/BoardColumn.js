@@ -42,14 +42,6 @@ export const BoardColumn = (props) => {
         </Text>
       </View>
 
-      {/* <FlatList
- data={
-     data
- }
- renderItem={(item)=>{}}
- >
-
- </FlatList> */}
       <View
         style={{
           flexDirection: "column",
@@ -63,7 +55,7 @@ export const BoardColumn = (props) => {
       >
         <View
           style={{
-            //   backgroundColor: "orange",
+            // backgroundColor: "orange",
             backgroundColor: colors.bg.secondary,
             padding: 10,
           }}
@@ -77,7 +69,7 @@ export const BoardColumn = (props) => {
           >
             {/* <BoardCard2></BoardCard2> */}
             {cardDatas.map((card) => {
-              return <BoardCard2 key={card.id} title={card.title}></BoardCard2>;
+              return <BoardCard2 key={card.id} card={card}></BoardCard2>;
             })}
           </ScrollView>
         </View>
@@ -90,6 +82,8 @@ export const BoardColumn = (props) => {
             backgroundColor: colors.bg.secondary,
             flexDirection: "row",
             justifyContent: "space-between",
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
           }}
         >
           {/* <Button title="Create" /> */}
@@ -112,8 +106,8 @@ export const BoardColumn = (props) => {
               </View>
               <View
                 style={{
-                  // backgroundColor: "green",
-                  paddingTop: 3,
+                  //   backgroundColor: "green",
+                  //   paddingTop: 3,
                   alignItems: "flex-end",
                 }}
               >
@@ -135,12 +129,13 @@ export const BoardColumn = (props) => {
             <View
               style={{
                 // backgroundColor: "red",
-                // alignItems: "center",
-                // alignSelf: "flex-end",
+                // alignItems: "flex-end",
+                // alignSelf: "flex-start",
                 // alignSelf: "stretch",
                 // justifyContent: "flex-start",
-                // justifyContent: 'flex-end'
-                justifyContent: "center",
+                // justifyContent: "flex-end",
+                // justifyContent: "center",
+                paddingTop: 10,
               }}
             >
               <Feather name="paperclip" size={24} color={colors.text.primary} />
