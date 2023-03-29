@@ -13,10 +13,15 @@ import { AntDesign, Feather } from "@expo/vector-icons";
 import { colors } from "../../../infrastructure/theme/colors";
 import { BoardCard2 } from "./BoardCard2";
 
+// import { Navigation } from "../../../infrastructure/navigation/AppNavigator";
+import { useNavigation } from "@react-navigation/native";
+
 const { width, height } = Dimensions.get("window");
 
 export const BoardColumn = (props) => {
   const onCreatePressed = (name) => console.warn(name);
+
+  const navigation = useNavigation();
   //   const cardDatasToDo = props.cardDatasToDo;
   //   console.warn(cardDatasToDo);
 
@@ -69,7 +74,17 @@ export const BoardColumn = (props) => {
           >
             {/* <BoardCard2></BoardCard2> */}
             {cardDatas.map((card) => {
-              return <BoardCard2 key={card.id} card={card}></BoardCard2>;
+              return (
+                <Pressable
+                  key={card.id}
+                  onPress={() => {
+                    console.warn(card.id, " ye basildi");
+                    navigation.navigate("CardEditScreen", { card: card });
+                  }}
+                >
+                  <BoardCard2 card={card}></BoardCard2>
+                </Pressable>
+              );
             })}
           </ScrollView>
         </View>

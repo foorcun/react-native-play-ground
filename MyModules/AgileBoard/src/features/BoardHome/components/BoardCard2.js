@@ -23,6 +23,7 @@ export const BoardCard2 = (props) => {
               width: 24,
               padding: 5,
               alignItems: "center",
+              borderRadius: 3,
             }}
           >
             <FontAwesome name="bookmark" size={16} color="white" />
