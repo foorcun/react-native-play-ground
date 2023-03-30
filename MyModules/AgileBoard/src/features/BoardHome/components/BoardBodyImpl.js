@@ -15,6 +15,9 @@ import { colors } from "../../../infrastructure/theme/colors";
 import { theme } from "../../../infrastructure/theme";
 import { BoardColumn } from "./BoardColumn";
 
+import Issues from "../../../../../../assets/mock_data/issues.json";
+import { StatusEnums } from "../../../../../../assets/mock_data/StatusEnums.js";
+
 // export default class App extends Component {
 
 //   componentDidMount() {
@@ -24,28 +27,40 @@ import { BoardColumn } from "./BoardColumn";
 const { width, height } = Dimensions.get("window");
 
 export const BoardBodyImpl = () => {
-  const cardDatasToDo = [
-    { id: "1", title: "Title 1" },
-    { id: "2", title: "Title 2 bu dnun title i coooooooookkkkk uzunnnnnnnnn" },
-    { id: "3", title: "Title 3" },
-    { id: "4", title: "Title 4" },
-    { id: "5", title: "Title 5" },
-    { id: "6", title: "Title 6" },
-    { id: "7", title: "Title 7" },
-    { id: "8", title: "Title 8" },
-    { id: "9", title: "Title 9" },
-    { id: "10", title: "Title 10" },
-    { id: "11", title: "Title 11" },
-    { id: "12", title: "Title 12" },
-    { id: "13", title: "Title 13" },
-  ];
+  // console.warn(Issues.issues);
 
-  const cardDatasInProgress = [
-    { id: "14", title: "Title 1 cardDatasInProgress" },
-    { id: "15", title: "Title 2 bu dnun title i coooooooookkkkk uzunnnnnnnnn" },
-    { id: "16", title: "Title 3" },
-    { id: "17", title: "Title 4" },
-  ];
+  const cardDatasToDo = Issues.issues.filter(
+    // (issue) => issue.status == "To Do"
+    (issue) => issue.status === StatusEnums.INPROGRESS
+  );
+
+  // const cardDatasToDo = [
+  //   { id: "1", title: "Title 1" },
+  //   { id: "2", title: "Title 2 bu dnun title i coooooooookkkkk uzunnnnnnnnn" },
+  //   { id: "3", title: "Title 3" },
+  //   { id: "4", title: "Title 4" },
+  //   { id: "5", title: "Title 5" },
+  //   { id: "6", title: "Title 6" },
+  //   { id: "7", title: "Title 7" },
+  //   { id: "8", title: "Title 8" },
+  //   { id: "9", title: "Title 9" },
+  //   { id: "10", title: "Title 10" },
+  //   { id: "11", title: "Title 11" },
+  //   { id: "12", title: "Title 12" },
+  //   { id: "13", title: "Title 13" },
+  // ];
+
+  const cardDatasInProgress = Issues.issues.filter(
+    // (issue) => issue.status == "To Do"
+    (issue) => issue.status === StatusEnums.INPROGRESS
+  );
+
+  // const cardDatasInProgress = [
+  //   { id: "14", title: "Title 1 cardDatasInProgress" },
+  //   { id: "15", title: "Title 2 bu dnun title i coooooooookkkkk uzunnnnnnnnn" },
+  //   { id: "16", title: "Title 3" },
+  //   { id: "17", title: "Title 4" },
+  // ];
 
   function cardDatasToDoProvider(cardDatas) {
     // console.warn(cardDatasToDo);
@@ -93,11 +108,21 @@ export const BoardBodyImpl = () => {
           ></BoardColumn>
         );
       }} */}
-      {cardDatasToDoProvider(cardDatasToDo)}
+      {/* {cardDatasToDoProvider(cardDatasToDo)} */}
+      {cardDatasToDoProvider(
+        Issues.issues.filter(
+          // (issue) => issue.status == "To Do"
+          (issue) => issue.status === StatusEnums.TODO
+        )
+      )}
       <BoardColumn
         key="inProgress"
         title="inProgress"
-        cardDatas={cardDatasInProgress}
+        // cardDatas={cardDatasInProgress}
+        cardDatas={Issues.issues.filter(
+          // (issue) => issue.status == "To Do"
+          (issue) => issue.status === StatusEnums.INPROGRESS
+        )}
       ></BoardColumn>
       {/* <BoardColumn></BoardColumn> */}
       {/* <BoardColumn></BoardColumn> */}

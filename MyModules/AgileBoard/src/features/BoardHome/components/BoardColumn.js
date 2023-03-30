@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -79,7 +80,10 @@ export const BoardColumn = (props) => {
                   key={card.id}
                   onPress={() => {
                     console.warn(card.id, " ye basildi");
-                    navigation.navigate("CardEditScreen", { card: card });
+                    navigation.navigate("CardEditScreen", {
+                      card: card,
+                      updateTitle: (x) => setMyName(x),
+                    });
                   }}
                 >
                   <BoardCard2 card={card}></BoardCard2>
@@ -103,9 +107,9 @@ export const BoardColumn = (props) => {
         >
           {/* <Button title="Create" /> */}
           <Pressable
-            onPress={() =>
-              onCreatePressed("i will be developed to create Issue")
-            }
+            onPress={() => {
+              onCreatePressed("i will be developed to help create Issue");
+            }}
           >
             <View
               style={{
@@ -137,9 +141,10 @@ export const BoardColumn = (props) => {
             </View>
           </Pressable>
           <Pressable
-            onPress={() =>
-              onCreatePressed("i will be developed to help to add files")
-            }
+            onPress={() => {
+              onCreatePressed();
+              // { myName } + "i will be developed to help to add files"
+            }}
           >
             <View
               style={{
