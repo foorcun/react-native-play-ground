@@ -19,6 +19,7 @@ const { width, height } = Dimensions.get("window");
 //   componentDidMount() {
 // 		setTimeout(() => {this.scrollView.scrollTo({x: -30}) }, 1) // scroll view position fix
 // 	}
+
 export const BoardBody = () => {
   return (
     <ScrollView

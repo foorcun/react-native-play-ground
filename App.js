@@ -15,6 +15,9 @@ import { AgileBoardNavigation } from "./MyModules/AgileBoard/src/infrastructure/
 
 import { ScrollViewHorizontalHome2 } from "./MyModules/ScrollViewHorizontal/src/features/screens/ScrollViewHorizontalHome2";
 
+import { Provider } from "react-redux";
+import { store } from "./MyModules/AgileBoard/src/store/index";
+
 const theme = {
   colors: {
     ui: {
@@ -27,17 +30,19 @@ export default function App() {
   // console.log(theme.colors.ui.primary);
   return (
     <>
-      <ThemeProvider theme={theme}>
-        {/* <EkranAlanlari></EkranAlanlari> */}
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          {/* <EkranAlanlari></EkranAlanlari> */}
 
-        {/* <FlutterStart></FlutterStart> */}
-        {/* <IlkHome></IlkHome> */}
-        {/* <ThemeProviderModule></ThemeProviderModule> */}
-        {/* <Navigation /> */}
-        <AgileBoardNavigation />
+          {/* <FlutterStart></FlutterStart> */}
+          {/* <IlkHome></IlkHome> */}
+          {/* <ThemeProviderModule></ThemeProviderModule> */}
+          {/* <Navigation /> */}
+          <AgileBoardNavigation />
 
-        {/* <ScrollViewHorizontalHome2 /> */}
-      </ThemeProvider>
+          {/* <ScrollViewHorizontalHome2 /> */}
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }

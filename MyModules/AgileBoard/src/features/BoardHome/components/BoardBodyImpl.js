@@ -15,52 +15,33 @@ import { colors } from "../../../infrastructure/theme/colors";
 import { theme } from "../../../infrastructure/theme";
 import { BoardColumn } from "./BoardColumn";
 
-import Issues from "../../../../../../assets/mock_data/issues.json";
-import { StatusEnums } from "../../../../../../assets/mock_data/StatusEnums.js";
+import Issues from "../../../../assets/mock_data/issues.json";
+import { StatusEnums } from "../../../../assets/mock_data/StatusEnums.js";
 
+import { useDispatch, useSelector } from "react-redux";
 // export default class App extends Component {
 
 //   componentDidMount() {
 // 		setTimeout(() => {this.scrollView.scrollTo({x: -30}) }, 1) // scroll view position fix
 // 	}
 
+import Products from "../../../../assets/mock_data/products";
+
 const { width, height } = Dimensions.get("window");
 
 export const BoardBodyImpl = () => {
-  // console.warn(Issues.issues);
+  const issues = useSelector((state) => state.issues.issues);
+  // console.warn(issues);
 
   const cardDatasToDo = Issues.issues.filter(
     // (issue) => issue.status == "To Do"
-    (issue) => issue.status === StatusEnums.INPROGRESS
+    (issue) => issue.status === StatusEnums.TODO
   );
-
-  // const cardDatasToDo = [
-  //   { id: "1", title: "Title 1" },
-  //   { id: "2", title: "Title 2 bu dnun title i coooooooookkkkk uzunnnnnnnnn" },
-  //   { id: "3", title: "Title 3" },
-  //   { id: "4", title: "Title 4" },
-  //   { id: "5", title: "Title 5" },
-  //   { id: "6", title: "Title 6" },
-  //   { id: "7", title: "Title 7" },
-  //   { id: "8", title: "Title 8" },
-  //   { id: "9", title: "Title 9" },
-  //   { id: "10", title: "Title 10" },
-  //   { id: "11", title: "Title 11" },
-  //   { id: "12", title: "Title 12" },
-  //   { id: "13", title: "Title 13" },
-  // ];
 
   const cardDatasInProgress = Issues.issues.filter(
     // (issue) => issue.status == "To Do"
     (issue) => issue.status === StatusEnums.INPROGRESS
   );
-
-  // const cardDatasInProgress = [
-  //   { id: "14", title: "Title 1 cardDatasInProgress" },
-  //   { id: "15", title: "Title 2 bu dnun title i coooooooookkkkk uzunnnnnnnnn" },
-  //   { id: "16", title: "Title 3" },
-  //   { id: "17", title: "Title 4" },
-  // ];
 
   function cardDatasToDoProvider(cardDatas) {
     // console.warn(cardDatasToDo);
@@ -108,22 +89,24 @@ export const BoardBodyImpl = () => {
           ></BoardColumn>
         );
       }} */}
-      {/* {cardDatasToDoProvider(cardDatasToDo)} */}
-      {cardDatasToDoProvider(
+      {cardDatasToDoProvider(cardDatasToDo)}
+      {/* {cardDatasToDoProvider(
         Issues.issues.filter(
           // (issue) => issue.status == "To Do"
           (issue) => issue.status === StatusEnums.TODO
         )
-      )}
+      )} */}
       <BoardColumn
         key="inProgress"
         title="inProgress"
         // cardDatas={cardDatasInProgress}
         cardDatas={Issues.issues.filter(
-          // (issue) => issue.status == "To Do"
-          (issue) => issue.status === StatusEnums.INPROGRESS
+          (issue) => issue.status == "To Do"
+          // (issue) => issue.status === StatusEnums.INPROGRESS
         )}
       ></BoardColumn>
+
+      <BoardColumn key="hepsi" title="hepsi" cardDatas={issues}></BoardColumn>
       {/* <BoardColumn></BoardColumn> */}
       {/* <BoardColumn></BoardColumn> */}
       {/* <View style={styles.view2} /> */}
