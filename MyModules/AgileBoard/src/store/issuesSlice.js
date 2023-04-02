@@ -25,10 +25,12 @@ export const issuesSlice = createSlice({
 //     issues.status === StatusEnums.TODO;
 //   });
 
-// export const selectCardsTODO = createSelector((state) => {
-//   // state.issues.items.filter((issues) => {
-//   //   issues.status === StatusEnums.TODO;
-//   // });
+export const selectCardsTODO = (state) => {
+  // console.warn(state.issues.items.length);
+  // return state.issues.items[0].status;
+  // return state.issues.items[0].status === StatusEnums.TODO;
 
-//   console.warn(state);
-// });
+  return state.issues.items.filter((item) => {
+    return item.status === StatusEnums.TODO;
+  });
+};

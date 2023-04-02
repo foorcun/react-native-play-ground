@@ -34,13 +34,13 @@ export const BoardBodyImpl = () => {
   const issues = useSelector((state) => state.issues.items);
   // console.warn(issues);
 
-  // const cardDatasToDooo = useSelector(selectCardsTODO);
-  // console.warn();
+  const cardDatasToDo = useSelector(selectCardsTODO);
+  // console.warn(cardDatasToDo);
 
-  const cardDatasToDo = issues.filter(
-    // (issue) => issue.status == "To Do"
-    (issue) => issue.status === StatusEnums.TODO
-  );
+  // const cardDatasToDo = issues.filter(
+  //   // (issue) => issue.status == "To Do"
+  //   (issue) => issue.status === StatusEnums.TODO
+  // );
 
   const cardDatasInProgress = issues.filter(
     // (issue) => issue.status == "To Do"
@@ -105,8 +105,8 @@ export const BoardBodyImpl = () => {
         title="inProgress"
         // cardDatas={cardDatasInProgress}
         cardDatas={issues.filter(
-          (issue) => issue.status == "To Do"
-          // (issue) => issue.status === StatusEnums.INPROGRESS
+          // (issue) => issue.status == "To Do"
+          (issue) => issue.status === StatusEnums.INPROGRESS
         )}
       ></BoardColumn>
 

@@ -17,7 +17,7 @@ export default [
   { id: "12", title: "title 12", status: "To Do" },
   { id: "13", title: "title 13", status: "To Do" },
 
-  { id: "14", title: "Title 14 cardDatasInProgress" },
+  { id: "14", title: "Title 14 cardDatasInProgress", status: "in Progress" },
   {
     id: "15",
     title: "Title 15 bu dnun title i coooooooookkkkk uzunnnnnnnnn",
