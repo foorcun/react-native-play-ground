@@ -30,6 +30,7 @@ export const CardEditScreen = () => {
   return (
     <View style={styles.container}>
       {/* <Text>{props.route.params.card.title}</Text> */}
+      {/* {dropDownButton()} */}
       {editableTitleText(selectedIssue.title, updateTitle)}
       {/* <Text>{selectedIssue.title}</Text>
       <TextInput
@@ -132,3 +133,15 @@ const editableTitleText = (selectedIssueTitle, saveFunction) => {
     // </Pressable>
   );
 };
+
+// const dropDownButton = () => {
+//   return (
+//     <View>
+//       <Text>pop up</Text>
+//     </View>
+//   );
+// };
+
+// const bottomPopup = () => {
+//   return <Modal animationType="fade" transparent={true} visible={show}></Modal>;
+// };
