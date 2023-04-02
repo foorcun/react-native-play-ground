@@ -14,6 +14,8 @@ import { Navigation } from "./MyModules/NavigationBase/src/infrastructure/naviga
 import { AgileBoardNavigation } from "./MyModules/AgileBoard/src/infrastructure/navigation";
 
 import { ScrollViewHorizontalHome2 } from "./MyModules/ScrollViewHorizontal/src/features/screens/ScrollViewHorizontalHome2";
+// import { BottomModal } from "./MyModules/Modal/src/features/BottomModal/BottomModal";
+import { AnimatedModal } from "./MyModules/Modal/src/features/AnimatedModal/AnimatedModal";
 
 import { Provider } from "react-redux";
 import { store } from "./MyModules/AgileBoard/src/store/index";
@@ -38,9 +40,11 @@ export default function App() {
           {/* <IlkHome></IlkHome> */}
           {/* <ThemeProviderModule></ThemeProviderModule> */}
           {/* <Navigation /> */}
-          <AgileBoardNavigation />
+          {/* <AgileBoardNavigation /> */}
 
           {/* <ScrollViewHorizontalHome2 /> */}
+          {/* <BottomModal /> */}
+          <AnimatedModal />
         </ThemeProvider>
       </Provider>
     </>
