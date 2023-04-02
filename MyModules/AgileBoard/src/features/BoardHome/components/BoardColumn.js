@@ -153,7 +153,8 @@ export const BoardColumn = (props) => {
           </Pressable>
           <Pressable
             onPress={() => {
-              onCreatePressed();
+              //onCreatePressed();
+               onCreatePressed("i will be developed to help to add files");
               // { myName } + "i will be developed to help to add files"
             }}
           >
