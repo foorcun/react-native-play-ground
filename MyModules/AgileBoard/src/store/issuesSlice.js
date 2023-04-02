@@ -1,8 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 import issues from "../../assets/mock_data/issues";
+import { StatusEnums } from "../../assets/mock_data/StatusEnums";
 
 const initialState = {
-  issues: issues, // array olarak degil json object icinde issues arrayi var
+  items: issues, // array olarak degil json object icinde issues arrayi var
   selectedIssue: null,
 };
 
@@ -18,3 +19,16 @@ export const issuesSlice = createSlice({
     },
   },
 });
+
+// export const selectCardsTODO = (state) =>
+//   state.issues.items.filter((issues) => {
+//     issues.status === StatusEnums.TODO;
+//   });
+
+// export const selectCardsTODO = createSelector((state) => {
+//   // state.issues.items.filter((issues) => {
+//   //   issues.status === StatusEnums.TODO;
+//   // });
+
+//   console.warn(state);
+// });

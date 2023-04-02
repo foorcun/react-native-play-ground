@@ -15,10 +15,11 @@ import { colors } from "../../../infrastructure/theme/colors";
 import { theme } from "../../../infrastructure/theme";
 import { BoardColumn } from "./BoardColumn";
 
-import Issues from "../../../../assets/mock_data/issues.json";
+// import Issues from "../../../../assets/mock_data/issues.json";
 import { StatusEnums } from "../../../../assets/mock_data/StatusEnums.js";
 
 import { useDispatch, useSelector } from "react-redux";
+import { selectCardsTODO } from "../../../store/issuesSlice";
 // export default class App extends Component {
 
 //   componentDidMount() {
@@ -30,15 +31,18 @@ import Products from "../../../../assets/mock_data/products";
 const { width, height } = Dimensions.get("window");
 
 export const BoardBodyImpl = () => {
-  const issues = useSelector((state) => state.issues.issues);
+  const issues = useSelector((state) => state.issues.items);
   // console.warn(issues);
 
-  const cardDatasToDo = Issues.issues.filter(
+  // const cardDatasToDooo = useSelector(selectCardsTODO);
+  // console.warn();
+
+  const cardDatasToDo = issues.filter(
     // (issue) => issue.status == "To Do"
     (issue) => issue.status === StatusEnums.TODO
   );
 
-  const cardDatasInProgress = Issues.issues.filter(
+  const cardDatasInProgress = issues.filter(
     // (issue) => issue.status == "To Do"
     (issue) => issue.status === StatusEnums.INPROGRESS
   );
@@ -100,7 +104,7 @@ export const BoardBodyImpl = () => {
         key="inProgress"
         title="inProgress"
         // cardDatas={cardDatasInProgress}
-        cardDatas={Issues.issues.filter(
+        cardDatas={issues.filter(
           (issue) => issue.status == "To Do"
           // (issue) => issue.status === StatusEnums.INPROGRESS
         )}
