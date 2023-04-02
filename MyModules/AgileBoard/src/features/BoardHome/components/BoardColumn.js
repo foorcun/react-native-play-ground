@@ -16,6 +16,8 @@ import { BoardCard2 } from "./BoardCard2";
 
 // import { Navigation } from "../../../infrastructure/navigation/AppNavigator";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { issuesSlice } from "../../../store/issuesSlice";
 
 const { width, height } = Dimensions.get("window");
 
@@ -23,6 +25,7 @@ export const BoardColumn = (props) => {
   const onCreatePressed = (name) => console.warn(name);
 
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   //   const cardDatasToDo = props.cardDatasToDo;
   //   console.warn(cardDatasToDo);
 
@@ -79,11 +82,19 @@ export const BoardColumn = (props) => {
                 <Pressable
                   key={card.id}
                   onPress={() => {
-                    console.warn(card.id, " ye basildi");
-                    navigation.navigate("CardEditScreen", {
-                      card: card,
-                      updateTitle: (x) => setMyName(x),
-                    });
+                    // console.warn(card.id, " ye basildi");
+                    console.warn(card.id, " => key degeri");
+
+                    dispatch(
+                      issuesSlice.actions.setSelectedIssueId({
+                        newIssueId: card.id,
+                      })
+                    );
+                    // navigation.navigate("CardEditScreen", {
+                    //   card: card,
+                    //   // updateTitle: (x) => setMyName(x),
+                    // });
+                    navigation.navigate("CardEditScreen");
                   }}
                 >
                   <BoardCard2 card={card}></BoardCard2>

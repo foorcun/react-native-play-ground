@@ -19,7 +19,8 @@ import { BoardColumn } from "./BoardColumn";
 import { StatusEnums } from "../../../../assets/mock_data/StatusEnums.js";
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectCardsTODO } from "../../../store/issuesSlice";
+import { selectIsuesTODO } from "../../../store/issuesSlice";
+import { selectIssuesInPROGRESS } from "../../../store/issuesSlice";
 // export default class App extends Component {
 
 //   componentDidMount() {
@@ -34,7 +35,7 @@ export const BoardBodyImpl = () => {
   const issues = useSelector((state) => state.issues.items);
   // console.warn(issues);
 
-  const cardDatasToDo = useSelector(selectCardsTODO);
+  const cardDatasToDo = useSelector(selectIsuesTODO);
   // console.warn(cardDatasToDo);
 
   // const cardDatasToDo = issues.filter(
@@ -42,10 +43,11 @@ export const BoardBodyImpl = () => {
   //   (issue) => issue.status === StatusEnums.TODO
   // );
 
-  const cardDatasInProgress = issues.filter(
-    // (issue) => issue.status == "To Do"
-    (issue) => issue.status === StatusEnums.INPROGRESS
-  );
+  // const cardDatasInProgress = issues.filter(
+  //   // (issue) => issue.status == "To Do"
+  //   (issue) => issue.status === StatusEnums.INPROGRESS
+  // );
+  const cardDatasInProgress = useSelector(selectIssuesInPROGRESS);
 
   function cardDatasToDoProvider(cardDatas) {
     // console.warn(cardDatasToDo);
