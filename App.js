@@ -16,6 +16,7 @@ import { AgileBoardNavigation } from "./MyModules/AgileBoard/src/infrastructure/
 import { ScrollViewHorizontalHome2 } from "./MyModules/ScrollViewHorizontal/src/features/screens/ScrollViewHorizontalHome2";
 // import { BottomModal } from "./MyModules/Modal/src/features/BottomModal/BottomModal";
 import { AnimatedModal } from "./MyModules/Modal/src/features/AnimatedModal/AnimatedModal";
+import { BottomSheetModal } from "./MyModules/BottomSheetModal/src/features/BottomSheetModal";
 
 import { Provider } from "react-redux";
 import { store } from "./MyModules/AgileBoard/src/store/index";
@@ -44,7 +45,8 @@ export default function App() {
 
           {/* <ScrollViewHorizontalHome2 /> */}
           {/* <BottomModal /> */}
-          <AnimatedModal />
+          {/* <AnimatedModal /> */}
+          <BottomSheetModal />
         </ThemeProvider>
       </Provider>
     </>
